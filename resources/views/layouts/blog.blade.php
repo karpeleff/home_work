@@ -4,15 +4,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--  
+      <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!--
     Document Title
     =============================================
     -->
     <title>Karpelev.com</title>
-    <!--  
-    Favicons
-    =============================================
-    -->
+      <!-- Scripts -->
+      <script src="{{ asset('js/app.js') }}" defer></script>
+      <!--
+       Favicons
+       =============================================
+       -->
     <link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicons/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicons/apple-icon-72x72.png">
@@ -30,10 +33,10 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="assets/images/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <!--  
+    <!--
     Stylesheets
     =============================================
-    
+
     -->
     <!-- Default stylesheets-->
     <link href="assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -55,6 +58,9 @@
     <x-head.tinymce-config/>
   </head>
   <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+  <div id="app">
+
+
     <main>
       <div class="page-loader">
         <div class="loader">Loading...</div>
@@ -359,8 +365,8 @@
 
       @yield('content')
 
-  
-    <!--  
+  </div>
+    <!--
     JavaScripts
     =============================================
     -->
